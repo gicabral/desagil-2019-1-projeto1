@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Projeto1</string>
+
+    <string name="botao1"> Esvrever mensagem </string>
+    <string name="botao2"> Mensagens prontas </string>
+    <string name="botao3"> Tradutor </string>
+
+    <string name="msg"> Escolha uma mensagem pronta: </string>
+    <string name="msg1"> Estou com fome </string>
+    <string name="msg2"> Estou com sede </string>
+    <string name="msg3"> "Estou sentindo dor" </string>
+    <string name="msg4"> Por favor, venha para cá </string>
+    <string name="msg5"> Preciso ir ao banheiro </string>
+
+    <string name="text_message"> Escreva uma mensagem: </string>
+    <string name="show_message"> Mostrar mensagem </string>
+
+
+
 </resources>

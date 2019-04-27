@@ -2,6 +2,7 @@ package br.pro.hashi.ensino.desagil.projeto1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class MensagensProntas extends AppCompatActivity {
@@ -19,29 +20,44 @@ public class MensagensProntas extends AppCompatActivity {
         TextView writtenMessage5 = findViewById(R.id.written_message5);
         TextView chosenMessage = findViewById(R.id.chosen_message);
 
-        writtenMessage1.setOnClickListener(v -> {
-            String content = writtenMessage1.getText().toString();
-            chosenMessage.setText(content);
+        writtenMessage1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String content = writtenMessage1.getText().toString();
+                chosenMessage.setText(content);
+            }
         });
 
-        writtenMessage2.setOnClickListener(v -> {
-            String content = writtenMessage2.getText().toString();
-            chosenMessage.setText(content);
+        writtenMessage2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String content = writtenMessage2.getText().toString();
+                chosenMessage.setText(content);
+            }
         });
 
-        writtenMessage3.setOnClickListener(v -> {
-            String content = writtenMessage3.getText().toString();
-            chosenMessage.setText(content);
+        writtenMessage3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String content = writtenMessage3.getText().toString();
+                chosenMessage.setText(content);
+            }
         });
 
-        writtenMessage4.setOnClickListener(v -> {
-            String content = writtenMessage4.getText().toString();
-            chosenMessage.setText(content);
+        writtenMessage4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String content = writtenMessage4.getText().toString();
+                chosenMessage.setText(content);
+            }
         });
 
-        writtenMessage5.setOnClickListener(v -> {
-            String content = writtenMessage5.getText().toString();
-            chosenMessage.setText(content);
+        writtenMessage5.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String content = writtenMessage5.getText().toString();
+                chosenMessage.setText(content);
+            }
         });
     }
 }

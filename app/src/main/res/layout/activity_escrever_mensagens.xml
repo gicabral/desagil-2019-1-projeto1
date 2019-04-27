@@ -7,26 +7,28 @@
     android:orientation="vertical"
     tools:context=".EscreverMensagens">
 
-    <TextView android:id="@+id/text_message"
+    <TextView
+        android:id="@+id/text_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:textSize="20sp"
-        android:text="Escreva uma mensagem:" />
+        android:text="@string/text_message"
+        android:textSize="20sp" />
 
-    <EditText android:id="@+id/edit_message"
+    <EditText
+        android:id="@+id/edit_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:textSize="15sp"
-        android:hint="Escreva aqui..." />
+        android:textSize="15sp" />
 
-    <Button android:id="@+id/show_message"
+    <Button
+        android:id="@+id/show_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:textSize="20sp"
-        android:text="Mostrar mensagem" />
+        android:text="@string/show_message"
+        android:textSize="20sp" />
 
     <TextView android:id="@+id/message_displayer"
         android:layout_width="match_parent"

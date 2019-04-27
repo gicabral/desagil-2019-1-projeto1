@@ -12,20 +12,24 @@
         android:layout_height="150sp"
         android:layout_margin="10sp"
         android:textSize="30sp"
-        android:text="Escrever mensagem" />
+        android:text="@string/botao1" />
 
     <Button android:id="@+id/button2_example"
         android:layout_width="match_parent"
         android:layout_height="150sp"
         android:layout_margin="10sp"
         android:textSize="30sp"
-        android:text="Mensagens prontas" />
+        android:text="@string/botao2" />
+
 
     <Button android:id="@+id/button3_example"
         android:layout_width="match_parent"
         android:layout_height="150sp"
         android:layout_margin="10sp"
         android:textSize="30sp"
-        android:text="Tradutor" />
+        android:text="@string/botao3" />
+
+
+
 
 </LinearLayout>
