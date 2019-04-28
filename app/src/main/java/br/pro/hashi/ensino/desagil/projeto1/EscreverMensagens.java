@@ -3,6 +3,7 @@ package br.pro.hashi.ensino.desagil.projeto1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.EditText;
@@ -19,10 +20,13 @@ public class EscreverMensagens extends AppCompatActivity {
         Button showMessage = findViewById(R.id.show_message);
         TextView displayMessage = findViewById(R.id.message_displayer);
 
-        showMessage.setOnClickListener(v -> {
-            String content = editMessage.getText().toString();
-            editMessage.setText("Escreva aqui...");
-            displayMessage.setText(content);
+        showMessage.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String content = editMessage.getText().toString();
+                editMessage.setText("Escreva aqui...");
+                displayMessage.setText(content);
+            }
         });
 
 
