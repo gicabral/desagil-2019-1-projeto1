@@ -15,6 +15,13 @@
     <string name="text_message"> Escreva uma mensagem: </string>
     <string name="show_message"> Mostrar mensagem </string>
 
+    <string name="tradutor1"> Texto no alfabeto romano </string>
+    <string name="escreva1"> Escreva aqui... </string>
+    <string name="tradutor2"> Texto em código Morse: </string>
+    <string name="escreva2"> Escreva aqui... </string>
+   
+
+
 
 
 </resources>
