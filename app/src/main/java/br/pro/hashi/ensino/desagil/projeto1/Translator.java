@@ -249,8 +249,27 @@ public class Translator {
     // Você deve mudar o recheio deste método, de
     // acordo com os requisitos não-funcionais.
     public char morseToChar(String code) {
-        return ' ';
+
+        Node atual = root;
+
+        for (int i = 0; i < code.length(); i++) {
+            char morse = code.charAt(i);
+
+            if (morse == '.') {
+                atual = atual.getLeft();
+            } else if (morse == '-') {
+                atual = atual.getRight();
+            } else {
+                return ' ';
+            }
+        }
+
+         return atual.getValue();
     }
+
+
+
+
 
 
     // Você deve mudar o recheio deste método, de
