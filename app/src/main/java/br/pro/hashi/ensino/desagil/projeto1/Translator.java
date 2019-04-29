@@ -11,244 +11,238 @@ public class Translator {
     private final Node root;
     private final HashMap<Character, Node> map;
 
-
     // Você deve mudar o recheio deste construtor,
     // de acordo com os requisitos não-funcionais.
+
     public Translator() {
 
-        private final Node root;
-        private final HashMap<Character, Node> map;
+        // raiz
 
-        public Translator() {
+        root = new Node(' ');
+        map = new HashMap<>();
+        map.put(' ', root);
 
-            // raiz
+        // primeira linha
 
-            root = new Node(' ');
-            map = new HashMap<>();
-            map.put(' ', root);
+        Node e = new Node('e');
+        root.setLeft(e);
+        e.setParent(root);
+        map.put('e', e);
 
-            // primeira linha
+        Node t = new Node('t');
+        root.setRight(t);
+        t.setParent(root);
+        map.put('t', t);
 
-            Node e = new Node('e');
-            root.setLeft(e);
-            e.setParent(root);
-            map.put('e', e);
+        // segunda linha
 
-            Node t = new Node('t');
-            root.setRight(t);
-            t.setParent(root);
-            map.put('t', t);
+        Node i = new Node('i');
+        e.setLeft(i);
+        i.setParent(e);
+        map.put('i', i);
 
-            // segunda linha
+        Node a = new Node('a');
+        e.setRight(a);
+        a.setParent(e);
+        map.put('a', a);
 
-            Node i = new Node('i');
-            e.setLeft(i);
-            i.setParent(e);
-            map.put('i', i);
+        Node n = new Node('n');
+        t.setLeft(n);
+        n.setParent(t);
+        map.put('n', n);
 
-            Node a = new Node('a');
-            e.setRight(a);
-            a.setParent(e);
-            map.put('a', a);
+        Node m = new Node('m');
+        t.setRight(m);
+        m.setParent(t);
+        map.put('m', m);
 
-            Node n = new Node('n');
-            t.setLeft(n);
-            n.setParent(t);
-            map.put('n', n);
+        // terceira linha
 
-            Node m = new Node('m');
-            t.setRight(m);
-            m.setParent(t);
-            map.put('m', m);
+        Node s = new Node('s');
+        i.setLeft(s);
+        s.setParent(i);
+        map.put('s', s);
 
-            // terceira linha
+        Node u = new Node('u');
+        i.setRight(u);
+        u.setParent(i);
+        map.put('u', u);
 
-            Node s = new Node('s');
-            i.setLeft(s);
-            s.setParent(i);
-            map.put('s', s);
+        Node r = new Node('r');
+        a.setLeft(r);
+        r.setParent(a);
+        map.put('r', r);
 
-            Node u = new Node('u');
-            i.setRight(u);
-            u.setParent(i);
-            map.put('u', u);
+        Node w = new Node('w');
+        a.setRight(w);
+        w.setParent(a);
+        map.put('w', w);
 
-            Node r = new Node('r');
-            a.setLeft(r);
-            r.setParent(a);
-            map.put('r', r);
+        Node d = new Node('d');
+        n.setLeft(d);
+        d.setParent(n);
+        map.put('d', d);
 
-            Node w = new Node('w');
-            a.setRight(w);
-            w.setParent(a);
-            map.put('w', w);
+        Node k = new Node('k');
+        n.setRight(k);
+        k.setParent(n);
+        map.put('k', k);
 
-            Node d = new Node('d');
-            n.setLeft(d);
-            d.setParent(n);
-            map.put('d', d);
+        Node g = new Node('g');
+        m.setLeft(g);
+        g.setParent(m);
+        map.put('g', g);
 
-            Node k = new Node('k');
-            n.setRight(k);
-            k.setParent(n);
-            map.put('k', k);
+        Node o = new Node('o');
+        m.setRight(o);
+        o.setParent(m);
+        map.put('o', o);
 
-            Node g = new Node('g');
-            m.setLeft(g);
-            g.setParent(m);
-            map.put('g', g);
+        // quarta linha
 
-            Node o = new Node('o');
-            m.setRight(o);
-            o.setParent(m);
-            map.put('o', o);
+        Node h = new Node('h');
+        s.setLeft(h);
+        h.setParent(s);
+        map.put('h', h);
 
-            // quarta linha
+        Node v = new Node('v');
+        s.setRight(v);
+        v.setParent(s);
+        map.put('v', v);
 
-            Node h = new Node('h');
-            s.setLeft(h);
-            h.setParent(s);
-            map.put('h', h);
+        Node f = new Node('f');
+        u.setLeft(f);
+        f.setParent(u);
+        map.put('f', f);
 
-            Node v = new Node('v');
-            s.setRight(v);
-            v.setParent(s);
-            map.put('v', v);
+        Node vazio1 = new Node(' ');
+        u.setRight(vazio1);
+        vazio1.setParent(u);
 
-            Node f = new Node('f');
-            u.setLeft(f);
-            f.setParent(u);
-            map.put('f', f);
+        Node l = new Node('l');
+        r.setLeft(l);
+        l.setParent(r);
+        map.put('l', l);
 
-            Node vazio1 = new Node(' ');
-            u.setRight(vazio1);
-            vazio1.setParent(u);
+        Node vazio2 = new Node(' ');
+        r.setRight(vazio2);
+        vazio2.setParent(r);
 
-            Node l = new Node('l');
-            r.setLeft(l);
-            l.setParent(r);
-            map.put('l', l);
+        Node p = new Node('p');
+        w.setLeft(p);
+        p.setParent(w);
+        map.put('p', p);
 
-            Node vazio2 = new Node(' ');
-            r.setRight(vazio2);
-            vazio2.setParent(r);
+        Node j = new Node('j');
+        w.setRight(j);
+        j.setParent(w);
+        map.put('j', j);
 
-            Node p = new Node('p');
-            w.setLeft(p);
-            p.setParent(w);
-            map.put('p', p);
+        Node b = new Node('b');
+        d.setLeft(b);
+        b.setParent(d);
+        map.put('b', b);
 
-            Node j = new Node('j');
-            w.setRight(j);
-            j.setParent(w);
-            map.put('j', j);
+        Node x = new Node('x');
+        d.setRight(x);
+        x.setParent(d);
+        map.put('x', x);
 
-            Node b = new Node('b');
-            d.setLeft(b);
-            b.setParent(d);
-            map.put('b', b);
+        Node c = new Node('c');
+        k.setLeft(c);
+        c.setParent(k);
+        map.put('c', c);
 
-            Node x = new Node('x');
-            d.setRight(x);
-            x.setParent(d);
-            map.put('x', x);
+        Node y = new Node('y');
+        k.setRight(y);
+        y.setParent(k);
+        map.put('y', y);
 
-            Node c = new Node('c');
-            k.setLeft(c);
-            c.setParent(k);
-            map.put('c', c);
+        Node z = new Node('z');
+        g.setLeft(z);
+        z.setParent(g);
+        map.put('z', z);
 
-            Node y = new Node('y');
-            k.setRight(y);
-            y.setParent(k);
-            map.put('y', y);
+        Node q = new Node('q');
+        g.setRight(q);
+        q.setParent(g);
+        map.put('q', q);
 
-            Node z = new Node('z');
-            g.setLeft(z);
-            z.setParent(g);
-            map.put('z', z);
+        Node vazio3 = new Node(' ');
+        o.setLeft(vazio3);
+        vazio3.setParent(o);
 
-            Node q = new Node('q');
-            g.setRight(q);
-            q.setParent(g);
-            map.put('q', q);
+        Node vazio4 = new Node(' ');
+        o.setRight(vazio4);
+        vazio4.setParent(o);
 
-            Node vazio3 = new Node(' ');
-            o.setLeft(vazio3);
-            vazio3.setParent(o);
+        // quinta linha
 
-            Node vazio4 = new Node(' ');
-            o.setRight(vazio4);
-            vazio4.setParent(o);
+        Node n5 = new Node('5');
+        h.setLeft(n5);
+        n5.setParent(h);
+        map.put('5', n5);
 
-            // quinta linha
+        Node n4 = new Node('4');
+        h.setRight(n4);
+        n4.setParent(h);
+        map.put('4', n4);
 
-            Node n5 = new Node('5');
-            h.setLeft(n5);
-            n5.setParent(h);
-            map.put('5', n5);
+        Node n3 = new Node('3');
+        v.setRight(n3);
+        n3.setParent(v);
+        map.put('3', n3);
 
-            Node n4 = new Node('4');
-            h.setRight(n4);
-            n4.setParent(h);
-            map.put('4', n4);
+        Node n2 = new Node('2');
+        vazio1.setLeft(n2);
+        n2.setParent(vazio2);
+        map.put('2', n2);
 
-            Node n3 = new Node('3');
-            v.setRight(n3);
-            n3.setParent(v);
-            map.put('3', n3);
+        Node mais = new Node('+');
+        vazio2.setLeft(mais);
+        mais.setParent(vazio2);
+        map.put('+', mais);
 
-            Node n2 = new Node('2');
-            vazio1.setLeft(n2);
-            n2.setParent(vazio2);
-            map.put('2', n2);
+        Node n1 = new Node('1');
+        j.setRight(n1);
+        n1.setParent(j);
+        map.put('1', n1);
 
-            Node mais = new Node('+');
-            vazio2.setLeft(mais);
-            mais.setParent(vazio2);
-            map.put('+', mais);
+        Node n6 = new Node('6');
+        b.setLeft(n6);
+        n6.setParent(b);
+        map.put('6', n6);
 
-            Node n1 = new Node('1');
-            j.setRight(n1);
-            n1.setParent(j);
-            map.put('1', n1);
+        Node igual = new Node('=');
+        b.setRight(igual);
+        igual.setParent(b);
+        map.put('=', igual);
 
-            Node n6 = new Node('6');
-            b.setLeft(n6);
-            n6.setParent(b);
-            map.put('6', n6);
+        Node barra = new Node('/');
+        x.setLeft(barra);
+        barra.setParent(x);
+        map.put('/', barra);
 
-            Node igual = new Node('=');
-            b.setRight(igual);
-            igual.setParent(b);
-            map.put('=', igual);
+        Node n7 = new Node('7');
+        z.setLeft(n7);
+        n7.setParent(z);
+        map.put('7', n7);
 
-            Node barra = new Node('/');
-            x.setLeft(barra);
-            barra.setParent(x);
-            map.put('/', barra);
+        Node n8 = new Node('8');
+        vazio3.setLeft(n8);
+        n8.setParent(vazio3);
+        map.put('8', n8);
 
-            Node n7 = new Node('7');
-            z.setLeft(n7);
-            n7.setParent(z);
-            map.put('7', n7);
+        Node n9 = new Node('9');
+        vazio4.setLeft(n9);
+        n9.setParent(vazio4);
+        map.put('9', n9);
 
-            Node n8 = new Node('8');
-            vazio3.setLeft(n8);
-            n8.setParent(vazio3);
-            map.put('8', n8);
+        Node n0 = new Node('0');
+        vazio4.setRight(n0);
+        n0.setParent(vazio4);
+        map.put('0', n0);
 
-            Node n9 = new Node('9');
-            vazio4.setLeft(n9);
-            n9.setParent(vazio4);
-            map.put('9', n9);
-
-            Node n0 = new Node('0');
-            vazio4.setRight(n0);
-            n0.setParent(vazio4);
-            map.put('0', n0);
-
-        }
     }
 
 
