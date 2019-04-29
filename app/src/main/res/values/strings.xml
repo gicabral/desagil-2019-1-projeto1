@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Projeto1</string>
 
-    <string name="botao1"> Esvrever mensagem </string>
+    <string name="botao1"> Escrever mensagem </string>
     <string name="botao2"> Mensagens prontas </string>
     <string name="botao3"> Tradutor </string>
 

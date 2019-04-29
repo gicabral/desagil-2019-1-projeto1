@@ -268,15 +268,27 @@ public class Translator {
     }
 
 
-
-
-
-
     // Você deve mudar o recheio deste método, de
     // acordo com os requisitos não-funcionais.
     public String charToMorse(char c) {
-        return " ";
-    }
+        Node atual = map.get(c);
+        Node last = map.get(c);
+        String mors = "";
+
+        while (atual != root) {
+            atual = atual.getParent();
+            if (atual.getLeft() == last) {
+                mors = '.' + mors;
+            } else if (atual.getRight() == last) {
+                mors = '-' + mors;
+            }
+            last = last.getParent();
+        }
+
+        return mors;
+
+        }
+
 
 
     // Você deve mudar o recheio deste método, de
