@@ -19,8 +19,9 @@ public class EscreverMensagens extends AppCompatActivity {
         EditText editMessage = findViewById(R.id.edit_message);
         Button showMessage = findViewById(R.id.show_message);
         TextView displayMessage = findViewById(R.id.message_displayer);
+        Button buttonnext = findViewById(R.id.buttonnext);
 
-        showMessage.setOnClickListener(new View.OnClickListener(){
+        showMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String content = editMessage.getText().toString();
@@ -29,6 +30,14 @@ public class EscreverMensagens extends AppCompatActivity {
             }
         });
 
+        buttonnext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(EscreverMensagens.this, Enviar.class);
+                startActivity(intent1);
+            }
 
+
+        });
     }
 }

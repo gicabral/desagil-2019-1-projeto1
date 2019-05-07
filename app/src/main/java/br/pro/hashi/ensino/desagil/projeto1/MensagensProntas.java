@@ -64,6 +64,7 @@ public class MensagensProntas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 up();
+
             }
         });
 
@@ -71,23 +72,23 @@ public class MensagensProntas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (getSelectedMsg() == "Estou com sede") {
-                    String msg1 = writtenMessage1.getText().toString();
+                    String msg1 = "Estou com sede";
                     chosenMessage.setText(msg1);
 
                 } else if (getSelectedMsg() == "Estou com fome") {
-                    String msg2 = writtenMessage2.getText().toString();
+                    String msg2 = "Estou com fome";
                     chosenMessage.setText(msg2);
 
                 } else if (getSelectedMsg() == "Estou sentindo dor") {
-                    String msg3 = writtenMessage3.getText().toString();
+                    String msg3 = "Estou sentindo dor";
                     chosenMessage.setText(msg3);
 
                 } else if (getSelectedMsg() == "Por favor, venha para cá") {
-                    String msg4 = writtenMessage4.getText().toString();
+                    String msg4 = "Por favor, venha para cá";
                     chosenMessage.setText(msg4);
 
                 } else if (getSelectedMsg() == "Preciso ir ao banheiro") {
-                    String msg5 = writtenMessage5.getText().toString();
+                    String msg5 = "Preciso ir ao banheiro";
                     chosenMessage.setText(msg5);
                 }
             }
