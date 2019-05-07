@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,8 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
+        android:layout_marginBottom="8dp"
         android:text="@string/msg"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/written_message2"
+        tools:layout_editor_absoluteX="-7dp" />
 
     <TextView
         android:id="@+id/written_message1"
@@ -22,7 +25,9 @@
         android:layout_margin="5sp"
         android:background="@drawable/rectangle"
         android:text="@string/msg1"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/written_message3"
+        tools:layout_editor_absoluteX="5dp" />
 
     <TextView
         android:id="@+id/written_message2"
@@ -31,7 +36,9 @@
         android:layout_margin="5sp"
         android:background="@drawable/rectangle"
         android:text="@string/msg2"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/written_message1"
+        tools:layout_editor_absoluteX="9dp" />
 
     <TextView
         android:id="@+id/written_message3"
@@ -39,8 +46,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
         android:background="@drawable/rectangle"
+        android:backgroundTint="#E91E63"
         android:text="@string/msg3"
-        android:textSize="25sp" />
+        android:textColorHighlight="#F44336"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/written_message4"
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/written_message4"
@@ -49,24 +60,96 @@
         android:layout_margin="5sp"
         android:background="@drawable/rectangle"
         android:text="@string/msg4"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/written_message5"
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/written_message5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
+        android:layout_marginBottom="41dp"
         android:background="@drawable/rectangle"
         android:text="@string/msg5"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/chosen_message"
+        tools:layout_editor_absoluteX="5dp" />
 
-    <TextView android:id="@+id/chosen_message"
+    <TextView
+        android:id="@+id/chosen_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
+        android:layout_marginBottom="72dp"
+        android:text=""
         android:textSize="30sp"
         android:textStyle="bold"
-        android:text=""/>
+        app:layout_constraintBottom_toTopOf="@+id/buttonup"
+        tools:layout_editor_absoluteX="5dp" />
+
+    <Button
+        android:id="@+id/buttonup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="162dp"
+        android:text="@string/botao4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chosen_message" />
+
+    <Button
+        android:id="@+id/buttonok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="78dp"
+        android:text="@string/botao5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonup"
+        app:layout_constraintVertical_bias="0.0" />
 
 
-</LinearLayout>
+    <Button
+        android:id="@+id/buttondown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginEnd="162dp"
+        android:text="@string/botao6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonok" />
+
+    <Button
+        android:id="@+id/buttonnext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="186dp"
+        android:text="@string/botaonext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonok" />
+
+    <Button
+        android:id="@+id/buttonback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="186dp"
+        android:text="@string/botaoback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonok"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

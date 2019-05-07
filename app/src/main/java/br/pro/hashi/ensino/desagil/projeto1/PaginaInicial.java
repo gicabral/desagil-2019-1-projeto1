@@ -5,43 +5,127 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.LinkedList;
 
 public class PaginaInicial extends AppCompatActivity {
+
+    private LinkedList<TextView> pagina = new LinkedList<>();
+    private LinkedList<Integer> index = new LinkedList<>();
+    private String[] pageName  = {
+            "Escrever mensagem",
+            "Mensagens Prontas",
+            "Dicionario"
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagina_inicial);
 
-        Button button1Example = (Button) findViewById(R.id.button1_example);
-        Button button2Example = (Button) findViewById(R.id.button2_example);
-        Button button3Example = (Button) findViewById(R.id.button3_example);
+        TextView writeMsg = (TextView) findViewById(R.id.writeMsg);
+        TextView defaultMsg = (TextView) findViewById(R.id.defaultMsg);
+        TextView dictionaire = (TextView) findViewById(R.id.dictionaire);
+        Button buttonup = (Button) findViewById(R.id.buttonup);
+        Button buttonok = (Button) findViewById(R.id.buttonok);
+        Button buttondown = (Button) findViewById(R.id.buttondown);
 
 
-        button1Example.setOnClickListener(new View.OnClickListener(){
+        writeMsg.setText(this.pageName[0]);
+        pagina.add(writeMsg);
+        index.add(0);
+
+        defaultMsg.setText(this.pageName[1]);
+        pagina.add(defaultMsg);
+        index.add(1);
+
+        dictionaire.setText(this.pageName[2]);
+        pagina.add(dictionaire);
+        index.add(2);
+
+
+        buttonup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PaginaInicial.this, EscreverMensagens.class);
-                startActivity(intent);
+                up();
             }
         });
 
-        button2Example.setOnClickListener(new View.OnClickListener() {
+        buttonok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(PaginaInicial.this, MensagensProntas.class);
-                startActivity(intent1);
+                if( getSelectedMsg() == "Escrever mensagem") {
+
+                    Intent intent1 = new Intent(PaginaInicial.this, EscreverMensagens.class);
+                    startActivity(intent1);
+                }
+                else if (getSelectedMsg() == "Mensagens Prontas"){
+                    Intent intent1 = new Intent(PaginaInicial.this, MensagensProntas.class);
+                    startActivity(intent1);
+                }
+                else if (getSelectedMsg() == "Dicionario"){
+                    Intent intent1 = new Intent(PaginaInicial.this, Tradutor.class);
+                    startActivity(intent1);
+                }
+
             }
         });
 
-        button3Example.setOnClickListener(new View.OnClickListener() {
+        buttondown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(PaginaInicial.this, Tradutor.class);
-                startActivity(intent2);
-            }
+                down();
 
+            }
         });
 
     }
+
+        private String getSelectedMsg() {
+            return this.pageName[this.index.get(1)];
+        }
+
+        private void down() {
+            // Essa função sobe a lista de mensagens.
+
+            // Loop que passa por cada caixa de texto e o index da mensagem que está mostrando.
+            for (int i = 0; i <= this.pagina.size() - 1; i++) {
+                // Pegando o index e a caixa de texto.
+                TextView textBox = this.pagina.get(i);
+                int paginaIndex = this.index.get(i);
+
+
+                // Lógica que se encarrega de subir a lista.
+                if (paginaIndex - 1 >= 0) {
+                    textBox.setText(this.pageName[paginaIndex - 1]);
+                    this.index.set(i, paginaIndex - 1);
+                } else {
+                    textBox.setText(this.pageName[this.pageName.length - 1]);
+                    this.index.set(i, this.pageName.length - 1);
+                }
+            }
+        }
+
+        private void up(){
+            // Essa função sobe a lista de mensagens.
+
+            // Loop que passa por cada caixa de texto e o index da mensagem que está mostrando.
+            for (int i = 0; i <= this.pagina.size() - 1; i++) {
+                // Pegando o index e a caixa de texto.
+                TextView textBox = this.pagina.get(i);
+                int paginaIndex = this.index.get(i);
+
+                // Lógica que se encarrega de subir a lista.
+                if (paginaIndex + 1 <= this.pageName.length - 1) {
+                    textBox.setText(this.pageName[paginaIndex + 1]);
+                    this.index.set(i, paginaIndex + 1);
+                } else {
+                    textBox.setText(this.pageName[0]);
+                    this.index.set(i, 0);
+                }
+            }
+        }
+
 }

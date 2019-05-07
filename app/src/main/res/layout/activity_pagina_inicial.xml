@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,29 +7,98 @@
     android:orientation="vertical"
     tools:context=".PaginaInicial">
 
-    <Button android:id="@+id/button1_example"
+    <TextView
+        android:id="@+id/writeMsg"
         android:layout_width="match_parent"
-        android:layout_height="150sp"
+        android:layout_height="127dp"
         android:layout_margin="10sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/botao1"
+        android:background="@drawable/rectangle"
         android:textSize="30sp"
-        android:text="@string/botao1" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Escrever mensagem" />
 
-    <Button android:id="@+id/button2_example"
+    <TextView
+        android:id="@+id/defaultMsg"
         android:layout_width="match_parent"
-        android:layout_height="150sp"
+        android:layout_height="126dp"
         android:layout_margin="10sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rectangle"
+        android:backgroundTint="#03F45B"
+        android:text="@string/botao2"
+        android:textScaleX="1"
         android:textSize="30sp"
-        android:text="@string/botao2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/writeMsg"
+        tools:text="Mensagens Prontas" />
 
 
-    <Button android:id="@+id/button3_example"
+    <TextView
+        android:id="@+id/dictionaire"
         android:layout_width="match_parent"
-        android:layout_height="150sp"
+        android:layout_height="118dp"
         android:layout_margin="10sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/botao3"
+        android:background="@drawable/rectangle"
         android:textSize="30sp"
-        android:text="@string/botao3" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/defaultMsg"
+        tools:text="Dicionario" />
+
+    <Button
+        android:id="@+id/buttonup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="162dp"
+        android:text="@string/botao4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dictionaire" />
+
+    <Button
+        android:id="@+id/buttonok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="78dp"
+        android:text="@string/botao5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonup"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <Button
+        android:id="@+id/buttondown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginEnd="162dp"
+        android:text="@string/botao6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonok" />
 
 
 
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
