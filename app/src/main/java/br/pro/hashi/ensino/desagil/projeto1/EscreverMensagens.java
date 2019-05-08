@@ -20,6 +20,7 @@ public class EscreverMensagens extends AppCompatActivity {
         Button showMessage = findViewById(R.id.show_message);
         TextView displayMessage = findViewById(R.id.message_displayer);
         Button buttonnext = findViewById(R.id.buttonnext);
+        Button buttonback = findViewById(R.id.buttonback);
 
         showMessage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +37,14 @@ public class EscreverMensagens extends AppCompatActivity {
                 Intent intent1 = new Intent(EscreverMensagens.this, Enviar.class);
                 startActivity(intent1);
             }
+        });
+
+        buttonback.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent1 = new Intent(EscreverMensagens.this, PaginaInicial.class);
+                    startActivity(intent1);
+                }
 
 
         });

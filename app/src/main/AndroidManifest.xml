@@ -10,20 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Enviar"></activity>
-        <activity android:name=".Contatos">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Dicionario">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Contatos"></activity>
         <activity android:name=".Tradutor" />
         <activity android:name=".MensagensProntas" />
         <activity android:name=".EscreverMensagens" />
