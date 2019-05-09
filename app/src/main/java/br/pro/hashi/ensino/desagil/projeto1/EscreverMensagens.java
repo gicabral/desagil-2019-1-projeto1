@@ -17,11 +17,13 @@ public class EscreverMensagens extends AppCompatActivity {
 
         TextView textMessage = findViewById(R.id.text_message);
         EditText editMessage = findViewById(R.id.edit_message);
-        Button buttonnext = findViewById(R.id.buttonnext);
-        Button buttonback = findViewById(R.id.buttonback);
+        Button buttondel = findViewById(R.id.buttondel);
+        Button buttoncontact = findViewById(R.id.buttoncontact);
+        Button buttonspace = findViewById(R.id.buttonspace);
+        Button buttonhome = findViewById(R.id.buttonhome);
 
 
-        buttonnext.setOnClickListener(new View.OnClickListener() {
+        buttoncontact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(EscreverMensagens.this, Contatos.class);
@@ -29,14 +31,13 @@ public class EscreverMensagens extends AppCompatActivity {
             }
         });
 
-        buttonback.setOnClickListener(new View.OnClickListener() {
+        buttonhome.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent1 = new Intent(EscreverMensagens.this, PaginaInicial.class);
                     startActivity(intent1);
                 }
-
-
+                
         });
     }
 }
