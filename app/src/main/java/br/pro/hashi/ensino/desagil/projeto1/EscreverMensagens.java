@@ -37,7 +37,7 @@ public class EscreverMensagens extends AppCompatActivity {
                     Intent intent1 = new Intent(EscreverMensagens.this, PaginaInicial.class);
                     startActivity(intent1);
                 }
-                
+
         });
     }
 }
