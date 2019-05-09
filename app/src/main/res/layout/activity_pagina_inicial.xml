@@ -70,7 +70,7 @@
         android:layout_width="74dp"
         android:layout_height="45dp"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="104dp"
         android:layout_marginEnd="162dp"
         android:background="@drawable/ic_arrow_upward_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,12 +99,15 @@
         android:layout_width="74dp"
         android:layout_height="44dp"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="176dp"
         android:layout_marginEnd="162dp"
         android:background="@drawable/ic_arrow_downward_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dictionaire" />
+
+        />
+
+
 
 
 

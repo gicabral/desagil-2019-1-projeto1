@@ -31,6 +31,9 @@
 
     <string name="botaosend"> Send </string>
 
+    <string name="contato1"> Harry Potter </string>
+    <string name="contato2"> Lucio Malfoy </string>
+    <string name="contato3"> Thor </string>
 
 
 </resources>
