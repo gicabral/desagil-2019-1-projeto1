@@ -16,8 +16,9 @@
     <string name="msg3"> "Estou sentindo dor" </string>
     <string name="msg4"> Por favor, venha para cá </string>
     <string name="msg5"> Preciso ir ao banheiro </string>
-    <string name="botaonext"> NEXT </string>
     <string name="botaoback"> BACK </string>
+    <string name="botaonext"> NEXT </string>
+
 
 
     <string name="text_message"> Escreva uma mensagem: </string>

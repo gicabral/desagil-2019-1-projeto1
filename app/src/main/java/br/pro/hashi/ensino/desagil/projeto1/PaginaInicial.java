@@ -1,6 +1,11 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.drawable.shapes.ArcShape;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +23,14 @@ public class PaginaInicial extends AppCompatActivity {
             "Mensagens Prontas",
             "Dicionario"
     };
+
+    protected void onDraw(Canvas canvas) {
+        @SuppressLint("DrawAllocation") ArcShape arc = new ArcShape((float) 0.5,1);
+        @SuppressLint("DrawAllocation") Paint paint  = new Paint();
+        paint.setColor(Color.WHITE);
+
+
+    }
 
 
     @Override
