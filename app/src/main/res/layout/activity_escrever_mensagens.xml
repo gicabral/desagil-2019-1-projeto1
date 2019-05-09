@@ -29,52 +29,69 @@
         tools:layout_editor_absoluteX="5dp"
         tools:layout_editor_absoluteY="62dp" />
 
-    <Button
-        android:id="@+id/buttonup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/botao4"
-        app:layout_constraintBottom_toTopOf="@+id/buttonok"
-        app:layout_constraintStart_toStartOf="@id/buttondown"
-        />
 
     <Button
         android:id="@+id/buttonok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/botao5"
-        app:layout_constraintBottom_toTopOf="@id/buttondown"
-        app:layout_constraintStart_toStartOf="@id/buttondown"
-        />
-
-
-    <Button
-        android:id="@+id/buttondown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/botao6"
+        android:layout_width="135dp"
+        android:layout_height="94dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <Button
         android:id="@+id/buttonnext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/botaonext"
-        app:layout_constraintStart_toEndOf="@id/buttonok"
-        app:layout_constraintBottom_toTopOf="@id/buttondown"
-        />
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/ic_backspace_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/buttonok"
+        app:layout_constraintStart_toEndOf="@id/buttonok" />
 
     <Button
         android:id="@+id/buttonback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/botaoback"
-        app:layout_constraintEnd_toStartOf="@id/buttonok"
-        app:layout_constraintBottom_toTopOf="@id/buttondown"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/ic_space_bar_black_24dp"
+
+        app:layout_constraintBottom_toBottomOf="@id/buttonok"
+        app:layout_constraintEnd_toStartOf="@id/buttonok" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_space_bar_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/buttonback"
+
+
         />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_home_black_24dp"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/buttonback" />
+
+    <Button
+        android:id="@+id/buttondel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_contacts_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/buttonnext" />
 
 
 </android.support.constraint.ConstraintLayout>
