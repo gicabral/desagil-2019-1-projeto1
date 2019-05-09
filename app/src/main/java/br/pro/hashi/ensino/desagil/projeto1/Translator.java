@@ -1,7 +1,10 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import android.util.Log;
+
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Queue;
 
 // Não é permitido mudar nada nessa classe
 // exceto o recheio dos três métodos.
@@ -194,8 +197,8 @@ public class Translator {
         map.put('3', n3);
 
         Node n2 = new Node('2');
-        vazio1.setLeft(n2);
-        n2.setParent(vazio2);
+        vazio1.setRight(n2);
+        n2.setParent(vazio1);
         map.put('2', n2);
 
         Node mais = new Node('+');
@@ -248,6 +251,7 @@ public class Translator {
 
     // Você deve mudar o recheio deste método, de
     // acordo com os requisitos não-funcionais.
+
     public char morseToChar(String code) {
 
         Node atual = root;
@@ -265,36 +269,62 @@ public class Translator {
         }
 
          return atual.getValue();
+
     }
 
 
     // Você deve mudar o recheio deste método, de
     // acordo com os requisitos não-funcionais.
+
     public String charToMorse(char c) {
+
         Node atual = map.get(c);
         Node last = map.get(c);
-        String mors = "";
+        String morse = "";
 
         while (atual != root) {
             atual = atual.getParent();
             if (atual.getLeft() == last) {
-                mors = '.' + mors;
-            } else if (atual.getRight() == last) {
-                mors = '-' + mors;
+                morse = '.' + morse;
+            }
+            else if (atual.getRight() == last) {
+                morse = '-' + morse;
             }
             last = last.getParent();
         }
 
-        return mors;
+        return morse;
 
-        }
-
+    }
 
 
     // Você deve mudar o recheio deste método, de
     // acordo com os requisitos não-funcionais.
+
     public LinkedList<String> getCodes() {
-        return new LinkedList<>();
+        LinkedList<String> lista = new LinkedList<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            Node node = queue.element();
+            Node left = node.getLeft();
+            Node right = node.getRight();
+
+            if (left != null) {
+                queue.add(left);
+            }
+            if (right != null) {
+                queue.add(right);
+            }
+            if (node.getValue() != '!' && node.getValue() != '+' && node.getValue() != '/' && node.getValue() != '=' && node.getValue() != '*'  && node.getValue() != ' ') {
+                lista.add(charToMorse(node.getValue()));
+            }
+            queue.remove();
+        }
+
+        return lista;
+
     }
 
 }
