@@ -27,6 +27,7 @@ public class EscreverMensagens extends AppCompatActivity {
         Button buttoncontact = findViewById(R.id.buttoncontact);
         Button buttonspace = findViewById(R.id.buttonspace);
         Button buttonhome = findViewById(R.id.buttonhome);
+        Button buttonmorse = findViewById(R. id.buttonmorse);
 
 
         buttoncontact.setOnClickListener(new View.OnClickListener() {

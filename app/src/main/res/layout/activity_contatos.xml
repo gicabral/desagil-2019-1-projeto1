@@ -7,12 +7,26 @@
     tools:context=".Contatos">
 
     <TextView
+        android:id="@+id/written_messages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/con"
+        android:textAlignment="center"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/contact1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
         android:id="@+id/contact2"
         android:layout_width="318dp"
         android:layout_height="57dp"
         android:layout_marginStart="38dp"
         android:layout_marginTop="53dp"
-        android:background="@drawable/rectangle"
+        android:background="@drawable/text"
         android:text="@string/contato2"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,9 +36,9 @@
         android:id="@+id/contact1"
         android:layout_width="318dp"
         android:layout_height="57dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="27dp"
-        android:background="@drawable/rectangle"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/text"
         android:text="@string/contato1"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,48 +48,49 @@
         android:id="@+id/buttonup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/botao4"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_arrow_upward_black_24dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonok"
-        app:layout_constraintStart_toStartOf="@id/buttondown"
-        />
+        app:layout_constraintStart_toStartOf="@id/buttondown" />
 
     <Button
         android:id="@+id/buttonok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/okbutton"
         android:text="@string/botao5"
         app:layout_constraintBottom_toTopOf="@id/buttondown"
-        app:layout_constraintStart_toStartOf="@id/buttondown"
-        />
+        app:layout_constraintStart_toStartOf="@id/buttondown" />
 
 
     <Button
         android:id="@+id/buttondown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/botao6"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_arrow_downward_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonsend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/botaosend"
-        app:layout_constraintStart_toEndOf="@id/buttonok"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/ic_send_black_24dp"
         app:layout_constraintBottom_toTopOf="@id/buttondown"
-        />
+        app:layout_constraintStart_toEndOf="@id/buttonok" />
 
     <Button
-        android:id="@+id/buttonback"
+        android:id="@+id/buttonhome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/botaoback"
-        app:layout_constraintEnd_toStartOf="@id/buttonok"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/ic_home_black_24dp"
         app:layout_constraintBottom_toTopOf="@id/buttondown"
-        />
+        app:layout_constraintEnd_toStartOf="@id/buttonok" />
 
     <TextView
         android:id="@+id/contact3"
@@ -83,7 +98,7 @@
         android:layout_height="57dp"
         android:layout_marginStart="38dp"
         android:layout_marginTop="53dp"
-        android:background="@drawable/rectangle"
+        android:background="@drawable/text"
         android:text="@string/contato3"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"

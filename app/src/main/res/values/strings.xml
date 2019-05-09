@@ -11,6 +11,7 @@
 
     //Mensagens prontas
     <string name="msg"> Escolha uma mensagem pronta: </string>
+    <string name="con"> CONTATOS: </string>
     <string name="msg1"> Estou com fome </string>
     <string name="msg2"> Estou com sede </string>
     <string name="msg3"> "Estou sentindo dor" </string>
