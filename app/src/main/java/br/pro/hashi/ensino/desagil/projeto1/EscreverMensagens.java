@@ -17,19 +17,9 @@ public class EscreverMensagens extends AppCompatActivity {
 
         TextView textMessage = findViewById(R.id.text_message);
         EditText editMessage = findViewById(R.id.edit_message);
-        Button showMessage = findViewById(R.id.show_message);
-        TextView displayMessage = findViewById(R.id.message_displayer);
         Button buttonnext = findViewById(R.id.buttonnext);
         Button buttonback = findViewById(R.id.buttonback);
 
-        showMessage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String content = editMessage.getText().toString();
-                editMessage.setText("Escreva aqui...");
-                displayMessage.setText(content);
-            }
-        });
 
         buttonnext.setOnClickListener(new View.OnClickListener() {
             @Override
