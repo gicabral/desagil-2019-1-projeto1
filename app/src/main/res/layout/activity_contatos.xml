@@ -6,57 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".Contatos">
 
+    <TextView
+        android:id="@+id/contact2"
+        android:layout_width="318dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="53dp"
+        android:background="@drawable/rectangle"
+        android:text="@string/contato2"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact1" />
+
+    <TextView
+        android:id="@+id/contact1"
+        android:layout_width="318dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/rectangle"
+        android:text="@string/contato1"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/buttonup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="461dp"
-        android:layout_marginEnd="162dp"
         android:text="@string/botao4"
         app:layout_constraintBottom_toTopOf="@+id/buttonok"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/buttondown"
+        />
 
     <Button
         android:id="@+id/buttonok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="162dp"
         android:text="@string/botao5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonup" />
+        app:layout_constraintBottom_toTopOf="@id/buttondown"
+        app:layout_constraintStart_toStartOf="@id/buttondown"
+        />
 
 
     <Button
         android:id="@+id/buttondown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginEnd="162dp"
         android:text="@string/botao6"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonok" />
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <Button
-        android:id="@+id/buttonnext"
+        android:id="@+id/buttonsend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="73dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/botaonext"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="@string/botaosend"
+        app:layout_constraintStart_toEndOf="@id/buttonok"
+        app:layout_constraintBottom_toTopOf="@id/buttondown"
+        />
 
     <Button
         android:id="@+id/buttonback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="74dp"
-        android:layout_marginBottom="40dp"
         android:text="@string/botaoback"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/buttonok"
+        app:layout_constraintBottom_toTopOf="@id/buttondown"
+        />
+
+    <TextView
+        android:id="@+id/contact3"
+        android:layout_width="318dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="53dp"
+        android:background="@drawable/rectangle"
+        android:text="@string/contato3"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact2" />
+
+
 
 
 </android.support.constraint.ConstraintLayout>

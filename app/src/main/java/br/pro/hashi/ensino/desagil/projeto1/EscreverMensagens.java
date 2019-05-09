@@ -34,7 +34,7 @@ public class EscreverMensagens extends AppCompatActivity {
         buttonnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(EscreverMensagens.this, Enviar.class);
+                Intent intent1 = new Intent(EscreverMensagens.this, Contatos.class);
                 startActivity(intent1);
             }
         });
