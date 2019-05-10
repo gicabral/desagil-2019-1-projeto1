@@ -13,13 +13,13 @@
         android:layout_height="wrap_content"
         android:text="@string/msg"
         android:textSize="23sp"
-        app:layout_constraintBottom_toTopOf="@+id/written_message2"
+        app:layout_constraintBottom_toTopOf="@+id/written_message1"
         app:layout_constraintTop_toTopOf="parent"
         android:textAlignment="center"
         android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/written_message1"
+        android:id="@+id/written_message2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
@@ -30,7 +30,7 @@
         tools:layout_editor_absoluteX="5dp" />
 
     <TextView
-        android:id="@+id/written_message2"
+        android:id="@+id/written_message1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
@@ -38,7 +38,7 @@
         android:background="@drawable/text"
         android:text="@string/msg2"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/written_message1"
+        app:layout_constraintBottom_toTopOf="@+id/written_message2"
         tools:layout_editor_absoluteX="4dp" />
 
     <TextView

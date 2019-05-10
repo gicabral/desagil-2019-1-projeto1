@@ -3,6 +3,7 @@ package br.pro.hashi.ensino.desagil.projeto1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,7 +26,6 @@ public class MensagensProntas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mensagens_prontas);
 
-        TextView writtenMessages = findViewById(R.id.written_messages);
         TextView writtenMessage1 = findViewById(R.id.written_message1);
         TextView writtenMessage2 = findViewById(R.id.written_message2);
         TextView writtenMessage3 = findViewById(R.id.written_message3);
@@ -71,26 +71,9 @@ public class MensagensProntas extends AppCompatActivity {
         buttonok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (getSelectedMsg() == "Estou com sede") {
-                    String msg1 = "Estou com sede";
-                    chosenMessage.setText(msg1);
+                chosenMessage.setText(getSelectedMsg());
+                System.out.println(getSelectedMsg());
 
-                } else if (getSelectedMsg() == "Estou com fome") {
-                    String msg2 = "Estou com fome";
-                    chosenMessage.setText(msg2);
-
-                } else if (getSelectedMsg() == "Estou sentindo dor") {
-                    String msg3 = "Estou sentindo dor";
-                    chosenMessage.setText(msg3);
-
-                } else if (getSelectedMsg() == "Por favor, venha para cá") {
-                    String msg4 = "Por favor, venha para cá";
-                    chosenMessage.setText(msg4);
-
-                } else if (getSelectedMsg() == "Preciso ir ao banheiro") {
-                    String msg5 = "Preciso ir ao banheiro";
-                    chosenMessage.setText(msg5);
-                }
             }
         });
 
@@ -105,8 +88,10 @@ public class MensagensProntas extends AppCompatActivity {
         buttonnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(MensagensProntas.this, Contatos.class);
-                startActivity(intent1);
+                String msg = getSelectedMsg();
+                Intent intent = new Intent(MensagensProntas.this,Contatos.class);
+                intent.putExtra("KeyMessage",msg);
+                startActivity(intent);
             }
 
         });
@@ -160,7 +145,12 @@ public class MensagensProntas extends AppCompatActivity {
         }
     }
 
+
+
 }
+
+
+
 
 
 

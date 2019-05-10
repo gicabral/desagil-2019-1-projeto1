@@ -19,10 +19,6 @@ public class EscreverMensagens extends AppCompatActivity {
     LinkedList<String> romanWords = new LinkedList<>();
 
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,16 +32,7 @@ public class EscreverMensagens extends AppCompatActivity {
         Button buttoncontact = findViewById(R.id.buttoncontact);
         Button buttonspace = findViewById(R.id.buttonspace);
         Button buttonhome = findViewById(R.id.buttonhome);
-        Button buttonmorse = findViewById(R. id.buttonmorse);
 
-
-        buttoncontact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(EscreverMensagens.this, Contatos.class);
-                startActivity(intent1);
-            }
-        });
 
         buttonhome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,8 +68,7 @@ public class EscreverMensagens extends AppCompatActivity {
                 if (morseOnGoing != null && morseOnGoing.length() > 0) {
                     morseOnGoing = morseOnGoing.substring(0, morseOnGoing.length() - 1);
                     writtenMorse.setText(morseOnGoing);
-                }
-                else {
+                } else {
                     String message = writtenMessage.getText().toString();
 
                     if (!message.isEmpty()) {
@@ -105,6 +91,7 @@ public class EscreverMensagens extends AppCompatActivity {
                         morseOnGoing = "";
                         writtenMorse.setText(morseOnGoing);
                         romanWords.add(String.valueOf(romanWritten));
+                        System.out.println(writtenMessage);
 
                         String content = "";
 
@@ -113,19 +100,43 @@ public class EscreverMensagens extends AppCompatActivity {
                         }
 
                         writtenMessage.setText(content);
+
+
                     } else {
                         romanWords.add(" ");
                     }
-                } catch (Exception exception){
+                } catch (Exception exception) {
                     Toast.makeText(getApplicationContext(), "Morse não reconhecido, favor tentar novamente.", Toast.LENGTH_LONG).show();
                     morseOnGoing = "";
                     writtenMorse.setText(morseOnGoing);
                 }
 
 
-        }
+            }
         });
 
+        buttoncontact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                romanWritten = translator.morseToChar(morseWritten);
+                romanWords.add(String.valueOf(romanWritten));
+                String content = "";
+
+                for (String word : romanWords) {
+                    content += (word);
+                }
+
+                String msg = content;
+                Intent intent = new Intent(EscreverMensagens.this, Contatos.class);
+                intent.putExtra("KeyMessage", msg);
+                startActivity(intent);
+
+
+            }
+        });
 
     }
 }
+
+
+

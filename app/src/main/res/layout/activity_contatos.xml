@@ -25,10 +25,15 @@
         android:layout_width="318dp"
         android:layout_height="57dp"
         android:layout_marginStart="38dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="38dp"
         android:background="@drawable/text"
+        android:backgroundTint="@color/pink"
         android:text="@string/contato2"
+        android:textAlignment=""
+        android:textColorHighlight="#F44336"
         android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contact1" />
 
@@ -36,11 +41,13 @@
         android:id="@+id/contact1"
         android:layout_width="318dp"
         android:layout_height="57dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="38dp"
         android:layout_marginTop="56dp"
+        android:layout_marginEnd="38dp"
         android:background="@drawable/text"
         android:text="@string/contato1"
         android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,10 +104,12 @@
         android:layout_width="318dp"
         android:layout_height="57dp"
         android:layout_marginStart="38dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="38dp"
         android:background="@drawable/text"
         android:text="@string/contato3"
         android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contact2" />
 
