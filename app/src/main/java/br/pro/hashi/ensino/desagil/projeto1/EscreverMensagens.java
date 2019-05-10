@@ -73,6 +73,8 @@ public class EscreverMensagens extends AppCompatActivity {
 
                     if (!message.isEmpty()) {
                         message = message.substring(0, message.length() - 1);
+                        romanWords.clear();
+                        romanWords.add(message);
                         writtenMessage.setText(message);
                     }
                 }
