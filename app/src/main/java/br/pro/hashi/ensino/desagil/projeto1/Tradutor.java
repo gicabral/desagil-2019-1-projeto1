@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Tradutor extends AppCompatActivity {
 
@@ -23,6 +24,8 @@ public class Tradutor extends AppCompatActivity {
 
         ArrayList DicionarioRomanoMorse = translator.DicionarioRomanoMorse();
         ArrayList DicionarioMorseRomano = translator.DicionarioMorseRomano();
+
+        Collections.sort(DicionarioRomanoMorse);
 
         ArrayAdapter<String> arrayAdapterRomanToMorse = new ArrayAdapter<String>(
                 this,

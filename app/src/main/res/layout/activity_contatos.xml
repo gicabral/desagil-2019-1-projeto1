@@ -30,7 +30,6 @@
         android:background="@drawable/text"
         android:backgroundTint="@color/pink"
         android:text="@string/contato2"
-        android:textAlignment=""
         android:textColorHighlight="#F44336"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
