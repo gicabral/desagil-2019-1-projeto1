@@ -5,6 +5,7 @@ import android.util.Log;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.ArrayList;
 
 // Não é permitido mudar nada nessa classe
 // exceto o recheio dos três métodos.
@@ -327,4 +328,28 @@ public class Translator {
 
     }
 
+    // Dicionário
+
+    public ArrayList<String> DicionarioRomanoMorse() {
+        ArrayList<String> ListaAlfabeticaRomano = new ArrayList<>();
+
+        for (HashMap.Entry<Character, Node> entry: map.entrySet()) {
+            Character key = entry.getKey();
+            String Morse = this.charToMorse(key);
+            ListaAlfabeticaRomano.add(key + " : " + Morse);
+        }
+
+        return ListaAlfabeticaRomano;
+    }
+
+    public ArrayList<String> DicionarioMorseRomano() {
+        ArrayList<String> ListaAlfabeticaMorse = new ArrayList<>();
+
+        for (String Morse : this.getCodes()) {
+            Character character = this.morseToChar(Morse);
+            ListaAlfabeticaMorse.add(Morse + " : " + character);
+        }
+
+        return ListaAlfabeticaMorse;
+    }
 }
