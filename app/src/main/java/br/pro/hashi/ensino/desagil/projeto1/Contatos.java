@@ -81,6 +81,7 @@ public class Contatos extends AppCompatActivity {
                     String mensagem = intent.getStringExtra("KeyMessage");
 
 
+
                     if (mensagem.isEmpty()) {
                         showToast("Mensagem inválida!");
                         return;
@@ -97,6 +98,8 @@ public class Contatos extends AppCompatActivity {
                     // Se tem, podemos iniciar a SMSActivity direto.
                     SmsManager manager = SmsManager.getDefault();
                     manager.sendTextMessage(phone, null, mensagem, null, null);
+                    Intent intent2 = new Intent(Contatos.this, PaginaInicial.class);
+                    startActivity(intent2);
 
                 } else {
 
@@ -109,6 +112,15 @@ public class Contatos extends AppCompatActivity {
 
                 }
             }
+        });
+
+        buttonhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(Contatos.this, PaginaInicial.class);
+                startActivity(intent2);
+            }
+
         });
 
 
