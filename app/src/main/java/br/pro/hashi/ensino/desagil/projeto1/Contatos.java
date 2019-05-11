@@ -33,8 +33,6 @@ public class Contatos extends AppCompatActivity {
     }
 
 
-    // Método de conveniência para iniciar a SMSActivity.
-
     private LinkedList<TextView> contacts = new LinkedList<>();
     private LinkedList<Integer> index = new LinkedList<>();
     private String[] contactNames = {
@@ -82,24 +80,23 @@ public class Contatos extends AppCompatActivity {
 
 
 
-                    if (mensagem.isEmpty()) {
+                    if (mensagem.length() <= 1 ){
                         showToast("Mensagem inválida!");
                         return;
                     }
 
                     String phone = number();
-                    System.out.println(phone);
 
                     if (!PhoneNumberUtils.isGlobalPhoneNumber(phone)) {
                         showToast("Número inválido!");
                         return;
                     }
 
-                    // Se tem, podemos iniciar a SMSActivity direto.
                     SmsManager manager = SmsManager.getDefault();
                     manager.sendTextMessage(phone, null, mensagem, null, null);
                     Intent intent2 = new Intent(Contatos.this, PaginaInicial.class);
                     startActivity(intent2);
+                    showToast("Mensagem enviada");
 
                 } else {
 
@@ -117,8 +114,16 @@ public class Contatos extends AppCompatActivity {
         buttonhome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(Contatos.this, PaginaInicial.class);
-                startActivity(intent2);
+                Intent intent = new Intent(Contatos.this, PaginaInicial.class);
+                startActivity(intent);
+            }
+
+        });
+
+        buttonok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showToast("Contato selecionado");
             }
 
         });
@@ -151,66 +156,63 @@ public class Contatos extends AppCompatActivity {
     }
 
 
-    private String getSelectedContacts() {
+    private String getContacts() {
         return this.contactNames[this.index.get(1)];
 
     }
 
+    private void up () {
 
+        for (int i = 0; i <= this.contacts.size() - 1; i++) {
 
+            TextView text = this.contacts.get(i);
+            int paginaIndex = this.index.get(i);
 
-        private void down () {
-
-            for (int i = 0; i <= this.contacts.size() - 1; i++) {
-
-                TextView text = this.contacts.get(i);
-                int paginaIndex = this.index.get(i);
-
-                if (paginaIndex - 1 >= 0) {
-                    text.setText(this.contactNames[paginaIndex - 1]);
-                    this.index.set(i, paginaIndex - 1);
-                } else {
-                    text.setText(this.contactNames[this.contactNames.length - 1]);
-                    this.index.set(i, this.contactNames.length - 1);
-                }
+            if (paginaIndex - 1 >= 0) {
+                text.setText(this.contactNames[paginaIndex - 1]);
+                this.index.set(i, paginaIndex - 1);
+            } else {
+                text.setText(this.contactNames[this.contactNames.length - 1]);
+                this.index.set(i, this.contactNames.length - 1);
             }
-        }
-
-        private void up () {
-            for (int i = 0; i <= this.contacts.size() - 1; i++) {
-
-                TextView text = this.contacts.get(i);
-                int paginaIndex = this.index.get(i);
-
-                if (paginaIndex + 1 <= this.contactNames.length - 1) {
-                    text.setText(this.contactNames[paginaIndex + 1]);
-                    this.index.set(i, paginaIndex + 1);
-                } else {
-                    text.setText(this.contactNames[0]);
-                    this.index.set(i, 0);
-                }
-            }
-        }
-
-        private String number() {
-
-            if (getSelectedContacts() == "Harry Potter") {
-                return  "5541988146111";
-
-            } else if (getSelectedContacts() == "Lucio Malfoy") {
-                return  "5511986527674";
-
-            } else if (getSelectedContacts() == "Thor") {
-
-                return "5511959690079";
-            }else {
-
-                return "";
-            }
-
-
         }
     }
+
+    private void down () {
+        for (int i = 0; i <= this.contacts.size() - 1; i++) {
+
+            TextView text = this.contacts.get(i);
+            int paginaIndex = this.index.get(i);
+
+            if (paginaIndex + 1 <= this.contactNames.length - 1) {
+                text.setText(this.contactNames[paginaIndex + 1]);
+                this.index.set(i, paginaIndex + 1);
+            } else {
+                text.setText(this.contactNames[0]);
+                this.index.set(i, 0);
+            }
+        }
+    }
+
+    private String number() {
+
+        if (getContacts() == "Harry Potter") {
+            return  "5541988146111";
+
+        } else if (getContacts() == "Lucio Malfoy") {
+            return  "5511986527674";
+
+        } else if (getContacts() == "Thor") {
+
+            return "5511959690079";
+        }else {
+
+            return "";
+        }
+
+
+    }
+}
 
 
 

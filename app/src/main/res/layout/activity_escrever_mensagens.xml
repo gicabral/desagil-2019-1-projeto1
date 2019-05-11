@@ -84,8 +84,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="@drawable/ic_home_black_24dp"
-
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/buttonspace" />
 
@@ -97,6 +95,18 @@
         android:background="@drawable/ic_contacts_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/buttondel" />
+
+    <Button
+        android:id="@+id/buttonadd"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+
+        android:width="120dp"
+        android:text="@string/botaoadd"
+        app:layout_constraintBottom_toTopOf="@+id/buttonmorse"
+        app:layout_constraintStart_toStartOf="@+id/buttonmorse" />
 
 
 </android.support.constraint.ConstraintLayout>

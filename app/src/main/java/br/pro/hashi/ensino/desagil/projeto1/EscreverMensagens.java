@@ -11,6 +11,10 @@ import android.widget.EditText;
 import java.util.LinkedList;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class EscreverMensagens extends AppCompatActivity {
     Translator translator = new Translator();
     String morseWritten;
@@ -24,7 +28,13 @@ public class EscreverMensagens extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escrever_mensagens);
 
-        TextView textMessage = findViewById(R.id.text_message);
+        FirebaseApp.initializeApp(this);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        DatabaseReference refMessages = database.getReference("mensagens");
+
+
         TextView writtenMessage = findViewById(R.id.written_message);
         TextView writtenMorse = findViewById(R.id.written_morse);
         Button buttondel = findViewById(R.id.buttondel);
@@ -32,7 +42,14 @@ public class EscreverMensagens extends AppCompatActivity {
         Button buttoncontact = findViewById(R.id.buttoncontact);
         Button buttonspace = findViewById(R.id.buttonspace);
         Button buttonhome = findViewById(R.id.buttonhome);
+        Button buttonadd = findViewById(R.id.buttonadd);
 
+
+        buttonadd.setOnClickListener(view -> {
+            refMessages.child(writtenMessage.getText().toString()).setValue(writtenMessage.getText().toString());
+            Intent intent = new Intent(EscreverMensagens.this, MensagensProntas.class);
+            startActivity(intent);
+        });
 
         buttonhome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +110,6 @@ public class EscreverMensagens extends AppCompatActivity {
                         morseOnGoing = "";
                         writtenMorse.setText(morseOnGoing);
                         romanWords.add(String.valueOf(romanWritten));
-                        System.out.println(writtenMessage);
 
                         String content = "";
 
@@ -120,6 +136,7 @@ public class EscreverMensagens extends AppCompatActivity {
         buttoncontact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                morseWritten = "";
                 romanWritten = translator.morseToChar(morseWritten);
                 romanWords.add(String.valueOf(romanWritten));
                 String content = "";
@@ -129,12 +146,15 @@ public class EscreverMensagens extends AppCompatActivity {
                 }
 
                 String msg = content;
+                System.out.println(msg);
+                System.out.println(msg.length());
                 Intent intent = new Intent(EscreverMensagens.this, Contatos.class);
                 intent.putExtra("KeyMessage", msg);
                 startActivity(intent);
 
 
             }
+
         });
 
     }
