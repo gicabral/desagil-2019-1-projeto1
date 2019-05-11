@@ -146,8 +146,6 @@ public class EscreverMensagens extends AppCompatActivity {
                 }
 
                 String msg = content;
-                System.out.println(msg);
-                System.out.println(msg.length());
                 Intent intent = new Intent(EscreverMensagens.this, Contatos.class);
                 intent.putExtra("KeyMessage", msg);
                 startActivity(intent);
